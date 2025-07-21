@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export default function Home() {
     return (
-        <div className={"h-screen flex justify-center items-center"}>
-            <article className="flex flex-col w-sm">
+        <div className={"flex justify-center items-center"}>
+            <article className="flex flex-col w-sm my-20">
                 <Image
                     alt={"Julia Fox above the toilet bowl"}
                     src={'/posts/fox.jpg'}

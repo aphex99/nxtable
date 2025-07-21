@@ -1,8 +1,9 @@
 import "./globals.css";
+import NavLinks from "@/app/ui/nav-links";
 import {Lato} from "next/font/google";
 
-const lato = Lato({
-    weight: '400',
+export const lato = Lato({
+    weight: ['400', "700", "900"],
     subsets: ['latin'],
 });
 
@@ -13,7 +14,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={lato.className}>
+        <head>
+            <title>NXTSEEN</title>
+            <link rel="icon" href="/favicon/favicon.svg" sizes="any"/>
+        </head>
         <body>
+        <NavLinks/>
         {children}
         </body>
         </html>
