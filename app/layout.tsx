@@ -1,5 +1,5 @@
 import "./globals.css";
-import NavLinks from "@/app/ui/nav-links";
+import NavLinks from "@/app/ui/components/nav-links/nav-links";
 import {Lato} from "next/font/google";
 
 export const lato = Lato({
@@ -15,7 +15,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={lato.className}>
         <head>
-            <title>NXTSEEN</title>
+            <title>NXTABLE</title>
             <link rel="icon" href="/favicon/favicon.svg" sizes="any"/>
         </head>
         <body>
