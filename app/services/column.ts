@@ -3,7 +3,9 @@
 import {User} from "@/app/types";
 import {ColumnDef} from "@tanstack/react-table";
 
-export const columns: ColumnDef<User>[] = [
+export type ColumnDefUser = ColumnDef<User>[]
+
+export const columns: ColumnDefUser = [
     {
         accessorKey: "username",
         header: "Username",
@@ -14,7 +16,7 @@ export const columns: ColumnDef<User>[] = [
     },
     {
         accessorKey: "phone",
-        header: "Phone Number",
+        header: "Number",
     },
     {
         accessorKey: "name",

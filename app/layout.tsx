@@ -1,5 +1,5 @@
 import "./globals.css";
-import NavLinks from "@/app/ui/components/nav-links/nav-links";
+import NavLinks from "@/app/components/nav-links/nav-links";
 import {Lato} from "next/font/google";
 
 export const lato = Lato({

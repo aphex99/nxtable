@@ -1,14 +1,14 @@
-import {getUsers} from "@/app/services";
+import {getUsers} from "@/app/services/api";
 import {columns} from "@/app/services/column";
-import {DataTable} from "@/app/ui/components/data-table/data-table";
+import BasicTable from "@/app/ui/data-table/data-table";
 
 export default async function Home() {
 
     const data = await getUsers();
 
     return (
-        <div className={"flex min-h-screen flex-col items-center justify-between p-24"}>
-            <DataTable columns={columns} data={data}/>
+        <div className={"flex justify-center"}>
+            <BasicTable data={data} columns={columns}/>
         </div>
     );
 }
