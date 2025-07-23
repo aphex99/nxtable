@@ -1,20 +1,14 @@
-import Image from 'next/image';
+import {getUsers} from "@/app/services";
+import {columns} from "@/app/services/column";
+import {DataTable} from "@/app/ui/components/data-table/data-table";
 
-export default function Home() {
+export default async function Home() {
+
+    const data = await getUsers();
+
     return (
-        <div className={"flex justify-center items-center"}>
-            <article className="flex flex-col w-sm my-20">
-                <Image
-                    alt={"Julia Fox above the toilet bowl"}
-                    src={'/posts/fox.jpg'}
-                    width={800}
-                    height={500}
-                    priority={true}
-                />
-                <h2 className={"text-2xl font-bold mb-2"}>My first blog post</h2>
-                <p>I don't know what to say. Just will text some words in English. I hope I haven't mistakes in this
-                    simple sentenses.</p>
-            </article>
+        <div className={"flex min-h-screen flex-col items-center justify-between p-24"}>
+            <DataTable columns={columns} data={data}/>
         </div>
     );
 }
