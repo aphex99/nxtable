@@ -1,8 +1,11 @@
+import {clientsReducer} from "@/lib/features/clients/clientsSlice";
 import {configureStore} from "@reduxjs/toolkit";
 
 export const makeStore = () => {
     return configureStore({
-        reducer: {}
+        reducer: {
+            clients: clientsReducer,
+        }
     });
 };
 

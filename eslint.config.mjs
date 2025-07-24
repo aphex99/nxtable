@@ -11,7 +11,10 @@ export default defineConfig([
         plugins: {js},
         extends: ["js/recommended"],
     },
-    {files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], languageOptions: {globals: globals.browser}},
+    {
+        files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+        languageOptions: {globals: globals.browser}
+    },
     tseslint.configs.recommended,
     pluginReact.configs.flat.recommended,
 ]);

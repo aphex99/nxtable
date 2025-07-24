@@ -1,25 +1,21 @@
 "use client";
 
-import {User} from "@/app/types";
+import {Client} from "@/app/types";
 import {ColumnDef} from "@tanstack/react-table";
 
-export type ColumnDefUser = ColumnDef<User>[]
+export type ColumnDefUser = ColumnDef<Client>[]
 
 export const columns: ColumnDefUser = [
     {
-        accessorKey: "username",
-        header: "Username",
+        accessorKey: "name",
+        header: "Name",
     },
     {
         accessorKey: "email",
         header: "Email",
     },
     {
-        accessorKey: "phone",
-        header: "Number",
-    },
-    {
-        accessorKey: "name",
-        header: "Name"
+        accessorKey: "type",
+        header: "Company Type",
     }
 ];
