@@ -18,7 +18,7 @@ export default function BasicTable() {
         if (clients.length <= 1) {
             dispatch(addClients(clientsData));
         }
-    }, [clients]);
+    }, [clients, dispatch]);
 
     const table = useReactTable({
         data: clients, columns, getCoreRowModel: getCoreRowModel()

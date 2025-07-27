@@ -3,8 +3,17 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import {defineConfig} from "eslint/config";
+import {FlatCompat} from "@eslint/eslintrc";
+
+const compat = new FlatCompat({
+    baseDirectory: import.meta.dirname,
+    recommendedConfig: js.configs.recommended,
+});
 
 export default defineConfig([
+    ...compat.config({
+        extends: ['eslint:recommended', 'next'],
+    }),
     {
         ignores: ["node_modules/**", ".next/**"],
     },
@@ -28,9 +37,6 @@ export default defineConfig([
             }
         },
         rules: {
-            ...js.configs.recommended.rules,
-            ...tseslint.configs.recommended[1].rules,
-            ...pluginReact.configs.flat.recommended.rules,
             "react/react-in-jsx-scope": "off"
         }
     }
