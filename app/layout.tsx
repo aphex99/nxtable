@@ -3,7 +3,7 @@ import NavLinks from "@/app/components/nav-links/nav-links";
 import {Lato} from "next/font/google";
 import { ReactNode } from 'react';
 
-export const lato = Lato({
+const lato = Lato({
     weight: ['400', "700", "900"],
     subsets: ['latin'],
 });
