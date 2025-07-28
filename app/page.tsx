@@ -5,6 +5,7 @@ export default async function Home() {
     return (
         <StoreProvider>
             <div className={'flex justify-center'}>
+                <h1>{'27.07.25'}</h1>
                 <BasicTable />
             </div>
         </StoreProvider>
