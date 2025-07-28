@@ -14,11 +14,12 @@ const initialState: Clients = [
 const clientsSlice = createSlice({
     name: 'clients',
     initialState,
-    reducers: {
-        addClients(state, action: PayloadAction<Clients>) {
+    reducers: (create) => ({
+        addClients: create.reducer((state, action)=> {
             return action.payload;
-        },
-    },
+        })
+        // fetchClients: create.asyncThunk()
+    })
 });
 
 export const { addClients } = clientsSlice.actions;

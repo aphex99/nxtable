@@ -10,7 +10,7 @@ import {
     getCoreRowModel,
     useReactTable,
 } from '@tanstack/react-table';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 export default function BasicTable() {
     const clients: Clients = useAppSelector((state) => state.clients);
@@ -30,6 +30,7 @@ export default function BasicTable() {
 
     return (
         <div className={'my-20'}>
+            {/*{fetchedClients.map(client => (<p key={client.id}>{client.name}</p>))}*/}
             <table>
                 <thead className={'border-2'}>
                 {table.getHeaderGroups().map((headerGroup) => (
