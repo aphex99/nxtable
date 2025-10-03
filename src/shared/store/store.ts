@@ -1,12 +1,12 @@
-import { clientsReducer } from '@/lib/features/clients/clientsSlice';
+import { clientsReducer } from '@/src/features/table/slice/clients/clientsSlice';
 import { configureStore } from '@reduxjs/toolkit';
 
 export const makeStore = () => {
-    return configureStore({
-        reducer: {
-            clients: clientsReducer,
-        },
-    });
+  return configureStore({
+    reducer: {
+      clients: clientsReducer,
+    },
+  });
 };
 
 export type AppStore = ReturnType<typeof makeStore>;
