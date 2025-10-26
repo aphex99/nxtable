@@ -1,1 +1,1 @@
-export * from "./TablePagination.js";
+export * from './TablePagination.js';

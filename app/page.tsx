@@ -1,6 +1,6 @@
 import TableComponent from '@/src/features/table/TableComponent';
 import StoreProvider from '@/src/shared/store/StoreProvider';
-import {Suspense} from "react";
+import { Suspense } from 'react';
 
 export default async function HomePage() {
   return (
@@ -8,7 +8,7 @@ export default async function HomePage() {
       <div className={'flex justify-center'}>
         <h1>{'29.07.25'}</h1>
         <Suspense>
-          <TableComponent/>
+          <TableComponent />
         </Suspense>
       </div>
     </StoreProvider>
