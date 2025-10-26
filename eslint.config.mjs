@@ -16,7 +16,11 @@ export default defineConfig([
     extends: ['eslint:recommended', 'next'],
   }),
   {
-    ignores: ['node_modules/**', '.next/**', 'src/shared/supabase/types/supabase.ts'],
+    ignores: [
+      'node_modules/**',
+      '.next/**',
+      'src/shared/supabase/types/supabase.ts',
+    ],
   },
   {
     files: ['**/*.{js,ts,jsx,tsx}'],
