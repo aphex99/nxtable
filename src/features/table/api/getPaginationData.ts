@@ -2,9 +2,11 @@
 
 import {createClient} from '@/src/shared/supabase/server';
 
-export async function getPaginationData(page: number, countPerPage: number) {
-  const from = (page - 1) * countPerPage;
-  const to = from + countPerPage - 1;
+export async function getPaginationData(
+  // page: number, countPerPage: number
+) {
+  // const from = (page - 1) * countPerPage;
+  // const to = from + countPerPage - 1;
 
   const baseClient = await createClient();
 
