@@ -1,3 +1,6 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from 'eslint-plugin-storybook';
+
 import js from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -16,7 +19,11 @@ export default defineConfig([
     extends: ['eslint:recommended', 'next'],
   }),
   {
-    ignores: ['node_modules/**', '.next/**', 'src/shared/supabase/types/supabase.ts'],
+    ignores: [
+      'node_modules/**',
+      '.next/**',
+      'src/shared/supabase/types/supabase.ts',
+    ],
   },
   {
     files: ['**/*.{js,ts,jsx,tsx}'],
@@ -42,6 +49,12 @@ export default defineConfig([
     rules: {
       'react/react-in-jsx-scope': 'off',
       'prettier/prettier': 'warn',
+      'no-unused-vars': [
+        'error',
+        {
+          args: 'none', // Disable unused arguments check globally
+        },
+      ],
     },
   },
 ]);
