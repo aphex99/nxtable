@@ -9,11 +9,12 @@ export async function getPaginationData(page: number, countPerPage: number) {
   const baseClient = await createClient();
 
   const { data, count, error } = await baseClient
-    .from('clients')
-    .select('*', { count: 'exact' })
+    .from('singers')
+    .select('id, name, email, type', { count: 'exact' })
+    .select()
     .range(from, to);
   if (error) {
-    console.error('Error fetching clients: ', error);
+    console.error('Error fetching singers: ', error);
     return { data: [], totalCount: 0 };
   }
 

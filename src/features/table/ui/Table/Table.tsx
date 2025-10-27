@@ -1,6 +1,6 @@
 'use client';
 
-import { Clients } from '@/src/entities/clients/types';
+import { Singers } from '@/src/entities/clients/types';
 import { columns } from '@/src/features/table/types/column';
 import {
   flexRender,
@@ -9,12 +9,12 @@ import {
 } from '@tanstack/react-table';
 
 type TableProps = {
-  clients: Clients;
+  singers: Singers;
 };
 
-export default function Table({ clients }: TableProps) {
+export default function Table({ singers }: TableProps) {
   const table = useReactTable({
-    data: ((clients as Clients) ??= []),
+    data: ((singers as Singers) ??= []),
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
