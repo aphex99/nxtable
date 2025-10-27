@@ -1,11 +1,11 @@
 'use client';
 
-import { Singers } from '@/src/entities/clients/types';
-import { getPaginationData } from '@/src/features/table/api/getPaginationData';
-import { COUNT_PER_PAGE } from '@/src/features/table/model/consts';
+import {Singers} from '@/src/entities/clients/types';
+import {getPaginationData} from '@/src/features/table/api/getPaginationData';
+import {COUNT_PER_PAGE} from '@/src/features/table/model/consts';
 import Table from '@/src/features/table/ui/Table/Table';
 import TablePagination from '@/src/features/table/ui/TablePagination/TablePagination';
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 type SingersData = {
   singers: Singers;
@@ -29,12 +29,12 @@ const TableComponent = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const { data, totalCount } = await getPaginationData(
+        const {data, totalCount} = await getPaginationData(
           currentPage,
           COUNT_PER_PAGE,
         );
         if (isSingersData(data, totalCount)) {
-          setSingersData({ singers: data, totalCount: totalCount });
+          setSingersData({singers: data, totalCount: totalCount});
         }
       } catch (error) {
         console.error('Error fetching singers data: ', error);
@@ -48,12 +48,13 @@ const TableComponent = () => {
 
   return (
     <div className={'flex flex-col items-center w-xl'}>
-      <Table singers={singersData.singers} />
+      <Table singers={singersData.singers}/>
       <TablePagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         totalCount={singersData.totalCount}
       />
+      <hr/>
     </div>
   );
 };
