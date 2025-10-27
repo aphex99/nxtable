@@ -33,6 +33,7 @@ const TableComponent = () => {
           currentPage,
           COUNT_PER_PAGE,
         );
+        console.log('Fetched Data: ', data);
         if (isSingersData(data, totalCount)) {
           setSingersData({singers: data, totalCount: totalCount});
         }
