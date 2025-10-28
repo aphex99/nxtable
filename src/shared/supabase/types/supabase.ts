@@ -39,7 +39,7 @@ export type Database = {
   };
   public: {
     Tables: {
-      singers: {
+      clients: {
         Row: {
           email: string | null;
           id: number;

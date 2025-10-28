@@ -1,10 +1,10 @@
 'use client';
 
-import { Singers } from '@/src/entities/clients/types';
+import {Clients} from '@/src/entities/clients/types';
 
-import { asyncThunkCreator, buildCreateSlice } from '@reduxjs/toolkit';
+import {asyncThunkCreator, buildCreateSlice} from '@reduxjs/toolkit';
 
-const initialState: Singers = [
+const initialState: Clients = [
   {
     id: 1,
     name: 'Belov Roman',
@@ -14,11 +14,11 @@ const initialState: Singers = [
 ];
 
 const createAppSlice = buildCreateSlice({
-  creators: { asyncThunk: asyncThunkCreator },
+  creators: {asyncThunk: asyncThunkCreator},
 });
 
 const clientsSlice = createAppSlice({
-  name: 'singers',
+  name: 'clients',
   initialState,
   reducers: () => {
     return {};
