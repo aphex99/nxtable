@@ -3,7 +3,5 @@ module.exports = {
   singleQuote: true,
   trailingComma: 'all',
   tabWidth: 2,
-  endOfLine: 'lf',
-  commaSpacing: false,
-  spaceBeforeFunctionParen: false,
+  endOfLine: 'lf'
 };

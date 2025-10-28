@@ -47,12 +47,7 @@ export default defineConfig([
     },
     rules: {
       'react/react-in-jsx-scope': 'off',
-      'prettier/prettier': ['warn',
-        {
-          commaSpacing: false,
-          spaceBeforeFunctionParen: false
-        },
-      ],
+      'prettier/prettier': ['off'],
       'no-unused-vars': [
         'error',
         {
