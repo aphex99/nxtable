@@ -1,9 +1,9 @@
 'use client';
 
-import { Singer } from '@/src/entities/clients/types';
+import { Client } from '@/src/entities/clients/types';
 import { ColumnDef } from '@tanstack/react-table';
 
-export type ColumnDefUser = ColumnDef<Singer>[];
+export type ColumnDefUser = ColumnDef<Client>[];
 
 export const columns: ColumnDefUser = [
   {

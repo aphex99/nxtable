@@ -1,61 +1,60 @@
 'use client';
 
-import {Singers} from '@/src/entities/clients/types';
-import {getPaginationData} from '@/src/features/table/api/getPaginationData';
-import {COUNT_PER_PAGE} from '@/src/features/table/model/consts';
+import { Clients } from '@/src/entities/clients/types';
+import { COUNT_PER_PAGE } from '@/src/features/table/model/consts';
 import Table from '@/src/features/table/ui/Table/Table';
 import TablePagination from '@/src/features/table/ui/TablePagination/TablePagination';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
-type SingersData = {
-  singers: Singers;
+type ClientsData = {
+  clients: Clients;
   totalCount: number | null;
 };
 
-function isSingersData(data: Singers, totalCount: number | null) {
+function isClientsData(data: Clients, totalCount: number | null) {
   return (
     totalCount !== null &&
     Array.isArray(data) &&
     data.every(
-      (singer) => singer && 'name' in singer && typeof singer.name === 'string',
+      (client) => client && 'name' in client && typeof client.name === 'string',
     )
   );
 }
 
 const TableComponent = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [singersData, setSingersData] = useState<SingersData | null>(null);
+  const [clientsData, setClientsData] = useState<ClientsData | null>(null);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const {data, totalCount} = await getPaginationData(
-          currentPage,
-          COUNT_PER_PAGE,
+        const res = await fetch(
+          `/api/clients?page=${currentPage}&perPage=${COUNT_PER_PAGE}`,
         );
-        console.log('Fetched Data: ', data);
-        if (isSingersData(data, totalCount)) {
-          setSingersData({singers: data, totalCount: totalCount});
+        const { data, totalCount } = await res.json();
+
+        if (isClientsData(data, totalCount)) {
+          setClientsData({ clients: data, totalCount: totalCount });
         }
       } catch (error) {
-        console.error('Error fetching singers data: ', error);
+        console.error('Error fetching clients data: ', error);
       }
     }
 
     fetchData();
   }, [currentPage]);
 
-  if (!singersData) return null;
+  if (!clientsData) return null;
 
   return (
     <div className={'flex flex-col items-center w-xl'}>
-      <Table singers={singersData.singers}/>
+      <Table clients={clientsData.clients} />
       <TablePagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-        totalCount={singersData.totalCount}
+        totalCount={clientsData.totalCount}
       />
-      <hr/>
+      <hr />
     </div>
   );
 };

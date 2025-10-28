@@ -1,6 +1,6 @@
-export type Singers = Singer[];
+export type Clients = Client[];
 
-export interface Singer {
+export interface Client {
   id: number;
   name: string;
   email: string;
