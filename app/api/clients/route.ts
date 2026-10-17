@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     const supabase = await createClient();
 
     const { data, count, error } = await supabase
-      .from('clients')
+      .from('singers')
       .select('id, name, email, type', { count: 'exact' })
       .range(from, to);
 
